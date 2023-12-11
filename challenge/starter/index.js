@@ -122,3 +122,29 @@ for (let i = 1; i < finances.length; i++) {
 console.log("Greatest Increase in Profits/Losses:", greatestIncreaseMonth, "($" + greatestIncreaseAmount + ")");
 console.log("Greatest Decrease in Profits/Losses:", greatestDecreaseMonth, "($" + greatestDecreaseAmount + ")");
 
+let totalChange = 0;
+
+for (let i = 1; i < finances.length; i++) {
+    let currentProfit = finances[i][1];
+    let previousProfit = finances[i - 1][1];
+    let change = currentProfit - previousProfit;
+    
+    totalChange += change;
+}
+
+
+let averageChange = totalChange / (totalMonths - 1);
+
+console.log("Average Change:", "$" + averageChange.toFixed(2));
+
+let total = 0;
+
+for (let i = 0; i < finances.length; i++) {
+    let profitLossValue = finances[i][1];
+    
+    total += profitLossValue;
+}
+
+console.log("Total:", "$" + total);
+
+
