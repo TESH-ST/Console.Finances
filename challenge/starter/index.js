@@ -86,3 +86,39 @@ var finances = [
   ['Jan-2017', 138230],
   ['Feb-2017', 671099],
 ];
+
+
+console.log('financial analysis')
+
+let totalMonths = finances.length;
+
+console.log("Total months: " + totalMonths);
+
+
+
+
+let greatestIncreaseAmount = 0;
+let greatestIncreaseMonth = '';
+let greatestDecreaseAmount = 0;
+let greatestDecreaseMonth = '';
+
+for (let i = 1; i < finances.length; i++) {
+  let currentProfit = finances[i][1];
+  let previousProfit = finances[i - 1][1];
+  let change = currentProfit - previousProfit;
+  let month = finances[i][0];
+
+  if (change > greatestIncreaseAmount) {
+    greatestIncreaseAmount = change;
+    greatestIncreaseMonth = month;
+  }
+
+  if (change < greatestDecreaseAmount) {
+    greatestDecreaseAmount = change;
+    greatestDecreaseMonth = month;
+  }
+}
+
+console.log("Greatest Increase in Profits/Losses:", greatestIncreaseMonth, "($" + greatestIncreaseAmount + ")");
+console.log("Greatest Decrease in Profits/Losses:", greatestDecreaseMonth, "($" + greatestDecreaseAmount + ")");
+
