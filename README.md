@@ -16,6 +16,8 @@ The greatest increase in Profit/Losses (date and amount) over the entire period.
 
 The greatest decrease in Profit/Losses (date and amount) over the entire period.
 
+## licence
 
+licence under the MIT licence 
 
 
