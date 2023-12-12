@@ -135,16 +135,18 @@ for (let i = 1; i < finances.length; i++) {
 let averageChange = totalChange / (totalMonths - 1);
 
 console.log("Average Change:", "$" + averageChange.toFixed(2));
-// total profit/loss oveer the entire period 
+
+// total profit/loss over the entire period 
 let total = 0;
 
 for (let i = 0; i < finances.length; i++) {
-  let profitLossValue = finances[i][1];
+  let sum = finances[i][1];
   
-  total += profitLossValue;
+  total += sum;
 }
 
 console.log("Total = $" + total);
+
 
 
 
