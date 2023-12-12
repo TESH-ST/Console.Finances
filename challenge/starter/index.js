@@ -87,13 +87,14 @@ var finances = [
   ['Feb-2017', 671099],
 ];
 
-
+//name finacial analysis
 console.log('financial analysis')
-
+//total number of months in data
 let totalMonths = finances.length;
 
 console.log("Total months: " + totalMonths);
 
+// The greatest increase/decrease in Profit/Losses (date and amount) over the entire period.
 
 let totalProfit=0;
 let totalMonthsProfit= 'null';
@@ -120,6 +121,7 @@ for (let i = 1; i < finances.length; i++) {
 console.log("Greatest Increase in Profits/Losses:", totalMonthsProfit, "($" + totalProfit + ")");
 console.log("Greatest Decrease in Profits/Losses:", totalMonthsLoss, "($" + totalLoss + ")");
 
+//average change in profit/loss period
 let totalChange = 0;
 
 for (let i = 1; i < finances.length; i++) {
@@ -130,11 +132,10 @@ for (let i = 1; i < finances.length; i++) {
 }
 
 
-
 let averageChange = totalChange / (totalMonths - 1);
 
 console.log("Average Change:", "$" + averageChange.toFixed(2));
-
+// total profit/loss oveer the entire period 
 let total = 0;
 
 for (let i = 0; i < finances.length; i++) {
