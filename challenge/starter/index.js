@@ -95,42 +95,40 @@ let totalMonths = finances.length;
 console.log("Total months: " + totalMonths);
 
 
-
-
-let greatestIncreaseAmount = 0;
-let greatestIncreaseMonth = '';
-let greatestDecreaseAmount = 0;
-let greatestDecreaseMonth = '';
+let totalProfit=0;
+let totalMonthsProfit= 'null';
+let totalLoss=0;
+let totalMonthsLoss='null';
 
 for (let i = 1; i < finances.length; i++) {
-  let currentProfit = finances[i][1];
+  let netEarning = finances[i][1];
   let previousProfit = finances[i - 1][1];
-  let change = currentProfit - previousProfit;
+  let change = netEarning - previousProfit;
   let month = finances[i][0];
 
-  if (change > greatestIncreaseAmount) {
-    greatestIncreaseAmount = change;
-    greatestIncreaseMonth = month;
+  if (change > totalProfit) {
+    totalProfit = change;
+    totalMonthsProfit = month;
   }
 
-  if (change < greatestDecreaseAmount) {
-    greatestDecreaseAmount = change;
-    greatestDecreaseMonth = month;
+  if (change < totalLoss) {
+    totalLoss = change;
+    totalMonthsLoss = month;
   }
 }
 
-console.log("Greatest Increase in Profits/Losses:", greatestIncreaseMonth, "($" + greatestIncreaseAmount + ")");
-console.log("Greatest Decrease in Profits/Losses:", greatestDecreaseMonth, "($" + greatestDecreaseAmount + ")");
+console.log("Greatest Increase in Profits/Losses:", totalMonthsProfit, "($" + totalProfit + ")");
+console.log("Greatest Decrease in Profits/Losses:", totalMonthsLoss, "($" + totalLoss + ")");
 
 let totalChange = 0;
 
 for (let i = 1; i < finances.length; i++) {
-    let currentProfit = finances[i][1];
-    let previousProfit = finances[i - 1][1];
-    let change = currentProfit - previousProfit;
-    
-    totalChange += change;
+  let netEarning = finances[i][1];
+  let previousProfit = finances[i - 1][1];
+  let change = netEarning - previousProfit;
+  totalChange += change;
 }
+
 
 
 let averageChange = totalChange / (totalMonths - 1);
@@ -140,11 +138,19 @@ console.log("Average Change:", "$" + averageChange.toFixed(2));
 let total = 0;
 
 for (let i = 0; i < finances.length; i++) {
-    let profitLossValue = finances[i][1];
-    
-    total += profitLossValue;
+  let profitLossValue = finances[i][1];
+  
+  total += profitLossValue;
 }
 
-console.log("Total:", "$" + total);
+console.log("Total = $" + total);
+
+
+
+
+
+
+
+
 
 
